@@ -92,40 +92,125 @@ function draw() {
 
 
     /*************ring2****************** */
-if(mousePressedOver(ring2) && ring2OnFirstTower == true){
-ring2.y = 80;
-}
-
-if(mousePressedOver(ring2) && ring2OnFirstTower == true ){
-ring2.x = 200;
-ring2.y = 300;
-
-ring2OnSecondTower = true;
-ring2OnFirstTower = false;
-}
-
-if(mousePressedOver(ring2) && ring2OnSecondTower == true){
-  ring2.y = 80;
-  ring2.x = 200;
-}
-
-    if(mousePressedOver(ring2)){
-      console.log("in ring2")
-      if(ring1OnFirstTower != true) {
-        console.log("in ring2 inside")
-        ring2OnFirstTower = true
-        ring2.y = 100; 
-      }
+    if(mousePressedOver(ring2) && ring2.x !=200){
+      ring2OnFirstTower = true
+      ring2.y = 100; 
     }
-
+  
     
-  if (mousePressedOver(tower2) && ring2OnFirstTower === true ){
-    ring2.x = 200;
-    ring2.y = 300;
-    sleep(500)
-    ring2OnSecondTower =  true;
-    ring2OnFirstTower = false;
+    if (mousePressedOver(tower2) && ring2OnFirstTower === true ){
+      ring2.x = 200;
+      ring2.y = 300;
+      sleep(500)
+      ring2OnSecondTower =  true;
+      ring2OnFirstTower = false;
+    }
+  
+   
+    //console.log("RIng1 at start"+ ring1.y + ring1.x)
+    if(mousePressedOver(ring2) && ring1OnSecondTower === true){
+      console.log("inside ring pressed")
+      ring2.x = 200;
+      ring2.y = 90;
+    }
+  
+    if(mousePressedOver(tower2) && ring2OnThirdTower === true){
+      sleep(500)
+      ring2.x = 200;
+      ring2.y = 300; 
+  
+      ring2OnSecondTower = true;
+      ring2OnThirdTower = false;
+    }
+    if (mousePressedOver(tower3) && ring2OnFirstTower === true )
+      {
+        ring2.x = 300;
+        ring2.y = 294;
+  
+        ring2OnThirdTower = true;
+        ring2OnSecondTower = false;
+        ring2OnFirstTower = false;
+      }
+  
+      if (mousePressedOver(tower3) && ring2OnSecondTower === true ){
+        ring2.x = 300;
+        ring2.y = 294;
+  
+        sleep(1000)
+  
+        ring2OnThirdTower = true;
+        ring2OnSecondTower = false;
+        ring2OnFirstTower = false;
+      }
+  
+  
+      if(mousePressedOver(ring2) && ring2OnThirdTower === true  ){
+        ring2.x = 300;
+        ring2.y = 90;
+      }
+ /*************ring2****************** */
+ 
+ /*************ring3****************** */
+
+ if(mousePressedOver(ring3) && ring3.x !=200){
+  ring3OnFirstTower = true
+  ring3.y = 100; 
+}
+
+
+if (mousePressedOver(tower2) && ring3OnFirstTower === true ){
+  ring3.x = 200;
+  ring3.y = 300;
+  sleep(500)
+  ring3OnSecondTower =  true;
+  ring3OnFirstTower = false;
+}
+
+
+//console.log("RIng1 at start"+ ring1.y + ring1.x)
+if(mousePressedOver(ring3) && ring3OnSecondTower === true){
+  console.log("inside ring pressed")
+  ring3.x = 200;
+  ring3.y = 90;
+}
+
+if(mousePressedOver(tower2) && ring3OnThirdTower === true){
+  sleep(500)
+  ring3.x = 200;
+  ring3.y = 300; 
+
+  ring3OnSecondTower = true;
+  ring3OnThirdTower = false;
+}
+if (mousePressedOver(tower3) && ring3OnFirstTower === true )
+  {
+    ring3.x = 300;
+    ring3.y = 294;
+
+    ring3OnThirdTower = true;
+    ring3OnSecondTower = false;
+    ring3OnFirstTower = false;
   }
+
+  if (mousePressedOver(tower3) && ring3OnSecondTower === true ){
+    ring3.x = 300;
+    ring3.y = 294;
+
+    sleep(1000)
+
+    ring3OnThirdTower = true;
+    ring3OnSecondTower = false;
+    ring3OnFirstTower = false;
+  }
+
+
+  if(mousePressedOver(ring3) && ring3OnThirdTower === true  ){
+    ring3.x = 300;
+    ring3.y = 90;
+  }
+/*************ring3****************** */
+
+
 
   drawSprites();
 }
